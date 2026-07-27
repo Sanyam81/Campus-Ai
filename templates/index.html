@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus AI</title>
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎓 Campus AI</h1>
+
+    <input
+        type="text"
+        id="destination"
+        placeholder="Enter destination">
+
+    <br><br>
+
+    <button onclick="findRoute()">Find Route</button>
+
+    <br><br>
+
+    <button onclick="startVoice()">🎤 Speak Destination</button>
+
+    <br><br>
+
+    <div id="result"></div>
+
+    <br>
+
+    <!-- Interactive Map -->
+    <div id="map"></div>
+<div id="locationImage" style="text-align:center; margin-top:20px;">
+    <img
+        id="placeImage"
+        src=""
+        alt="Location Image"
+        style="max-width:500px; width:100%; display:none; border-radius:10px;"
+    />
+</div>
+
+</div>
+
+<!-- Your JavaScript -->
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
